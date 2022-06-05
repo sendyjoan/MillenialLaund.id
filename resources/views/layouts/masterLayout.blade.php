@@ -25,9 +25,9 @@
       <div class="hero_area">
          <!-- header section strats -->
          <header class="header_section">
-            <div class="container">
+            <div class="container-fluid">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
+                  <a class="navbar-brand" href="index.html"><img width="50" src="images/logo.png" style="width:250px;height:250px;" /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
                   </button>
@@ -36,13 +36,6 @@
                         <li class="nav-item active">
                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
-                       <!-- <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
-                           <ul class="dropdown-menu">
-                              <li><a href="about.html">About</a></li>
-                               <li><a href="testimonial.html">Testimonial</a></li>
-                           </ul>
-                        </li> -->
                         <li class="nav-item">
                            <a class="nav-link" href="#">Our Services</a>
                         </li>
@@ -53,8 +46,14 @@
                            <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
+                           <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="#">Register</a>
+                        </li>
+                        <li class="nav-item">
                            <a class="nav-link" href="#">
-                              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10px" y="10px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                                  <g>
                                     <g>
                                        <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
@@ -123,7 +122,7 @@
       <!-- end client section -->
       <!-- footer start -->
       <footer>
-         <div class="container">
+         <div class="container-fluid">
             <div class="row">
                <div class="col-md-4">
                    <div class="full">

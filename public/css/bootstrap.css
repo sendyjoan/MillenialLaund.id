@@ -49,7 +49,7 @@ html {
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block;
+  display: auto;
 }
 
 body {
@@ -196,7 +196,7 @@ figure {
 }
 
 img {
-  vertical-align: middle;
+  vertical-align: right;
   border-style: none;
 }
 
@@ -553,25 +553,25 @@ pre code {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .container {
     max-width: 540px;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .container {
     max-width: 1140px;
   }
@@ -588,8 +588,9 @@ pre code {
 .row {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -1514,7 +1515,7 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #212529;
+  color: #215869;
 }
 
 .table th,

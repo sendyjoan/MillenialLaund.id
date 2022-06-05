@@ -108,7 +108,7 @@
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
                   <div class="carousel-item active">
-                     <div class="container ">
+                     <div class="container-fluid">
                         <div class="row">
                            <div class="col-md-7 col-lg-6 ">
                               <div class="detail-box">
@@ -134,7 +134,7 @@
                      </div>
                   </div>
                   <div class="carousel-item ">
-                     <div class="container ">
+                     <div class="container-fluid ">
                         <div class="row">
                            <div class="col-md-7 col-lg-6 ">
                               <div class="detail-box">
@@ -173,6 +173,7 @@
       </div>
       <!-- why section -->
       <section class="why_section layout_padding">
+         <div class="container-fluid">
          <div class="container">
             <div class="heading_container heading_center">
                <h2>
