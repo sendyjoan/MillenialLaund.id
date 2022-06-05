@@ -73,6 +73,9 @@ h2 {
 }
 
 
+@media only screen and (max-width: 480px) {
+  /* This CSS will be applied only to phones and other small devices. */
+}
 .heading_container {
   display: flex;
   flex-direction: column;
