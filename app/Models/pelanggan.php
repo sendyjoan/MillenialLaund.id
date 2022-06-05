@@ -2,20 +2,29 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\Pelanggan as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model; // eloquent model
 
-class pelanggan extends Model
+class Pelanggan extends Model
 {
-    use HasFactory;
+    protected $table = 'pelanggan'; // Eloquent akan membuat model pelanggan menyimpan record di tabel pelanggan
+    protected $primaryKey = 'id_pelanggan'; // Memanggil isi DB Dengan primarykey
+     /**
+    * The attributes that are mass assignable.
+    *
+    * @var array
+    */
     protected $fillable = [
+        'id_pelanggan',
         'nama_pelanggan',
-        'id_jenisKelamin',
-        'alamat_pelanggan',
-        'tanggalLahir_pelanggan',
+        'noHP_Pelanggan',
+        'email_pelanggan',
         'username_pelanggan',
         'password_pelanggan',
-        'email_pelanggan',
-        'noHp_pelanggan',
+        'alamat_pelanggan',
     ];
+
 }
