@@ -24,6 +24,14 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/bahan', function () {
+    return view('alatBahan');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -12,6 +12,26 @@
       <meta name="author" content="" />
       <link rel="shortcut icon" href="images/favicon.png" type="">
       <title>MILLENIALLAUND.ID</title>
+      <!-- Menyisipkan library Google Maps -->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+   <script>
+       // fungsi initialize untuk mempersiapkan peta
+       function initialize() {
+      var propertiPeta = {
+        center:new google.maps.LatLng(-8.5830695,116.3202515),
+        zoom:9,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    
+      var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+    }
+
+    // event jendela di-load  
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+      
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
       <!-- font awesome style -->
@@ -27,7 +47,7 @@
          <header class="header_section">
             <div class="container-fluid">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="50" src="images/logo.png" style="width:250px;height:250px;" /></a>
+                  <a class="navbar-brand" href="index.html"><img width="300" src="images/logo.png"  /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
                   </button>
@@ -40,16 +60,17 @@
                            <a class="nav-link" href="#">Our Services</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="#">About Us</a>
+                           <a class="nav-link" href="#">Bahan Laundry</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="#">Login</a>
+                           
+                           <a class="nav-link" href="/login">Login</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="#">Register</a>
+                           <a class="nav-link" href="/register">Register</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="#">
@@ -127,7 +148,7 @@
                <div class="col-md-4">
                    <div class="full">
                       <div class="logo_footer">
-                        <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
+                        <a href="#"><img width="500" src="images/logo.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
                         <p><strong>ADDRESS:</strong> Malang,Indonesia</p>
@@ -146,7 +167,7 @@
                         <ul>
                            <li><a href="#">Home</a></li>
                            <li><a href="#">Our Services</a></li>
-                           <li><a href="#">About Us</a></li>
+                           <li><a href="#">Alat Bahan</a></li>
                            <li><a href="#">Contact</a></li>
                         </ul>
                      </div>
@@ -162,7 +183,7 @@
                      </div>
                   </div>
                      </div>
-                  </div>     
+                  </div>   
                   <!-- <div class="col-md-5">
                      <div class="widget_menu">
                         <h3>Newsletter</h3>
@@ -180,7 +201,7 @@
                            </form>
                         </div>
                      </div>
-                  </div> -->
+                  </div> --->
                   </div>
                </div>
             </div>

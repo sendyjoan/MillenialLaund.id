@@ -103,7 +103,7 @@
          <!-- slider section -->
          <section class="slider_section ">
             <div class="slider_bg_box">
-               <img src="images/slider-bg.jpg" alt="">
+               <img class="d-block w-100" src="images/slider-bg.jpg" width="100px">
             </div>
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
@@ -117,12 +117,14 @@
                                     MillenialLaund.id
                                     </span>
                                  </h1>
-                                 <p>
-                                    Laundry adalah salah satu bagian dalam pengelolaan jasa cuci-mencuci
-                                    atas semua pakaian yang telah diditipkan untuk dibersihkan. Jasa laundry menjadi
-                                    alternatif bagi sebagian orang yang memiliki aktivitas padat namun tidak sempat
-                                    untuk mencuci pakaiannya sendiri.
-                                 </p>
+                                 <h4>
+                                    <span>
+                                    Laundry adalah salah satu bagian dalam pengelolaan jasa cuci-mencuci<br />
+                                    atas semua pakaian yang telah diditipkan untuk dibersihkan.<br /> 
+                                    Jasa laundry menjadi alternatif bagi sebagian orang yang memiliki<br />
+                                    aktivitas padat namun tidak sempat untuk mencuci pakaiannya sendiri.<br />
+                                    </span>
+                                 </h4>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
                                     Laundry Sekarang!
@@ -144,12 +146,16 @@
                                     </span>
     
                                  </h2>
-                                 <ul type="square">
+                                 <h4>
+                                 <span>
+                                    <ul type="square">
                                         <li>Pakaian dari laundry hilang atau luntur</li>
                                         <li>Laundry tidak tepat waktu</li>
                                         <li>Tidak tenang dengan laundry</li>
                                         <li>Buang waktu dan tenaga untuk mencuci</li>
                                      </ul>
+                                     </span>
+                                 </h4>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
                                     Laundry Sekarang!
@@ -174,14 +180,15 @@
       <!-- why section -->
       <section class="why_section layout_padding">
          <div class="container-fluid">
-         <div class="container">
+         <div class="container-fluid">
             <div class="heading_container heading_center">
                <h2>
                  Layanan MillenialLaund.id
                </h2>
             </div>
             <div class="row">
-               <div class="col-md-4">
+               
+               <div class="col-md-3">
                   <div class="box ">
                      <div class="img-box">
                         <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo4/dist/../src/media/svg/icons/Electric/Washer.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -202,7 +209,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="col-md-2">
                   <div class="box ">
                      <div class="img-box">
                         <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo4/dist/../src/media/svg/icons/Home/Towel.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -222,7 +229,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="col-md-2">
                   <div class="box ">
                      <div class="img-box">
                      <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo4/dist/../src/media/svg/icons/Clothes/Dress.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -243,7 +250,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="col-md-2">
                   <div class="box ">
                      <div class="img-box">
                         <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo4/dist/../src/media/svg/icons/Electric/Iron.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -264,7 +271,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="col-md-3">
                   <div class="box ">
                      <div class="img-box">
                         <<span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/keen/releases/2021-04-21-040700/theme/demo4/dist/../src/media/svg/icons/Clothes/Sneakers.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -288,8 +295,27 @@
          </div>
       </section>
       <!-- end why section -->
-      
+
+      <hr>
+      <hr>
+
+     <section>
+     <div class="container-fluid">
+         <div class="container-fluid">
+            <div class="maps">
+               <div class="maps-box">
+               <h2>
+                  <span>
+                  Temukan Lokasi Kami Didekatmu
+                  </span>
+               </h2>
+               </div>
+
+               <div id="googleMap" style="width:100%;height:380px;"></div>
+      </div>
+         
      
+     </section>
       
       
 @endsection
