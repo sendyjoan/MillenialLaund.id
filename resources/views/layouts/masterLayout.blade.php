@@ -66,10 +66,7 @@
                            <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
                            
-=======
->>>>>>> 0d3cc78d97d6a655c454791281e34639b8fe8017
                            <a class="nav-link" href="/login">Login</a>
                         </li>
                         <li class="nav-item">
