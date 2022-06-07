@@ -14,7 +14,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/chosen.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
-	<link rel="stylesheet" type="text/css" href="assets/color-01.css">
+	<link rel="stylesheet" type="text/css" href="assets/color-01.css"> 
+
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
    @yield('content')

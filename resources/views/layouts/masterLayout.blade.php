@@ -148,7 +148,7 @@
                <div class="col-md-4">
                    <div class="full">
                       <div class="logo_footer">
-                        <a href="#"><img width="500" src="images/logo.png" alt="#" /></a>
+                        <a href="#"><img width="300" src="images/logo.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
                         <p><strong>ADDRESS:</strong> Malang,Indonesia</p>
@@ -179,6 +179,7 @@
                            <li><a href="#">Account</a></li>
                            <li><a href="#">Login</a></li>
                            <li><a href="#">Register</a></li>
+                           
                         </ul>
                      </div>
                   </div>

@@ -28,6 +28,10 @@ Route::get('/bahan', function () {
     return view('alatBahan');
 });
 
+Route::get('/edit', function () {
+    return view('editProfile');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
