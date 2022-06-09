@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTablePetugas extends Migration
+class CreatePetugasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,13 +17,11 @@ class CreateTablePetugas extends Migration
             $table->id();
             $table->string('nama_petugas');
             $table->text('alamat_petugas');
-            $table->foreignId('id_jenisKelamin')->constrained();
             $table->date('tanggalLahir_petugas');
             $table->string('username_petugas');
             $table->string('password_petugas');
             $table->string('email_petugas')->unique();
-            $table->number('noHP_petugas');
-            $table->foreignId('id_role')->constrained();
+            $table->string('noHP_petugas', 14);
             $table->timestamps();
         });
     }
