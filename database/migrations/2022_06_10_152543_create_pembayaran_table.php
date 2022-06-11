@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCabangTable extends Migration
+class CreatePembayaranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateCabangTable extends Migration
      */
     public function up()
     {
-        Schema::create('cabang', function (Blueprint $table) {
+        Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
-            $table->string('alamat_cabang');
-            $table->string('nama_cabang');
-            $table->foreignId('id_petugas')->constrained();
+            $table->double('nomor_kartu');
+            $table->double('nomor_tertera');
+            $table->date('tgl_akhir');
+            $table->string('kode_cvv');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateCabangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cabang');
+        Schema::dropIfExists('pembayaran');
     }
 }
