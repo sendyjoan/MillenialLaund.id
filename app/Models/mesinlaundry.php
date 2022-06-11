@@ -9,11 +9,17 @@ class mesinlaundry extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama_mesin',
+        'nama',
+        'cabang_id',
         'kapasitas',
-        'kode_mesin',
-        'harga_mesin',
-        'id_cabang',
-        'id_status',
+        'kode',
+        'harga',
+        'status',
     ];
+    public function cabang(){
+        return $this->belongsTo(cabang::class);
+    }
+    public function booking(){
+        return $this->hasMany(booking::class);
+    }
 }

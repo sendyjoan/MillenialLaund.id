@@ -9,7 +9,11 @@ class cabang extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'alamat_cabang',
-        'nama_cabang',
+        'alamat',
+        'cabang',
     ];
+
+    public function mesinlaundry(){
+        return $this->hasOne(mesinlaundry::class);
+    }
 }
