@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.app')
 
 @section('content')
 <!-- <div class="container">
@@ -101,16 +101,22 @@
     </div>
 </div> -->
 
-<!--main area-->
-<main id="main" class="main-site left-sidebar">
+
+
+
+
+
+
+<!--template luar-->
+<!-- <main id="main" class="main-site left-sidebar">
 
 <div class="container">
 
     <div class="wrap-breadcrumb">
         <ul>
-            <li class="item-link"><a href="#" class="link">home</a></li>
-            <li class="item-link"><a href="#" class="link">Login</a></li>
-            <li class="item-link"><span>Register</span></li>
+            <li class="item-link"><a href="/index" class="link">home</a></li>
+            <li class="item-link"><a href="/login" class="link">Login</a></li>
+            <li class="item-link"><a href="/register" class="link">Register</a></li>
         </ul>
     </div>
     <div class="row">
@@ -156,12 +162,185 @@
                         </form>
                     </div>											
                 </div>
-            </div><!--end main products area-->		
+            </div>	
         </div>
-    </div><!--end row-->
+    </div>
 
-</div><!--end container-->
+</div>
 
-</main>
+</main> -->
 <!--main area-->
+
+
+
+
+
+
+
+<!-- dibantu rosisssss -->
+
+<div class="container">
+
+<div class="card o-hidden border-0 shadow-lg my-5">
+    <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+            <img class="col-lg-6 d-none d-lg-block" src="assets/images.png">
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <div class="col-md-10">
+                        <center><h1 class="h3 text-gray-900 mb-4">Create an Account!</h1></center>
+                    </div>
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+
+
+
+                        <div class="row mb-3">
+
+                            <div class="col-md-10">
+                                <input id="id" 
+                                    type="number" 
+                                    class="form-control @error('id') is-invalid @enderror" 
+                                    placeholder="ID" 
+                                    name="ID" 
+                                    style="border-radius: 30px; height: 45px;">
+
+                                @error('id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+
+                            <div class="col-md-10">
+                                <input id="name" 
+                                    type="text" 
+                                    class="form-control @error('name') is-invalid @enderror" 
+                                    placeholder="Name"
+                                    name="name" value="{{ old('name') }}" 
+                                    required autocomplete="name" autofocus
+                                    style="border-radius: 30px; height: 45px;">
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                        </div>
+
+                         <div class="row mb-3">
+
+                            <div class="col-md-10">
+                                <input id="address" 
+                                    type="text" 
+                                    class="form-control @error('address') is-invalid @enderror" 
+                                    placeholder="Adress"
+                                    name="address" value="{{ old('address') }}" 
+                                    required autocomplete="address" autofocus
+                                    style="border-radius: 30px; height: 45px;">
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                         <div class="row mb-3">
+
+                            <div class="col-md-10">
+                                <input id="phone" 
+                                    type="number" 
+                                    class="form-control @error('phone') is-invalid @enderror" 
+                                    placeholder="+6285xxxxxz"
+                                    name="phone" value="{{ old('phone') }}" 
+                                    required autocomplete="phone" autofocus
+                                    style="border-radius: 30px; height: 45px;">
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+
+                            <div class="col-md-10">
+                                <input id="email" 
+                                    type="email" 
+                                    class="form-control @error('email') is-invalid @enderror" 
+                                    placeholder="xxx@gmail.com"
+                                    name="email" 
+                                    value="{{ old('email') }}" 
+                                    required autocomplete="email"
+                                    style="border-radius: 30px; height: 45px;">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="col-sm-5 mb-3 mb-sm-0">
+                                <input id="password" 
+                                    type="password" 
+                                    class="form-control @error('password') is-invalid @enderror" 
+                                    placeholder="Password" 
+                                    name="password" 
+                                    required autocomplete="new-password"
+                                    style="border-radius: 30px; height: 45px;">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="col-sm-5">
+                                <input id="password-confirm" 
+                                    type="password" 
+                                    class="form-control" 
+                                    placeholder="Password Confirm"
+                                    name="password_confirmation" 
+                                    required autocomplete="new-password"
+                                    style="border-radius: 30px; height: 45px;">
+                            </div>
+                        </div><br>
+
+                        <div class="row mb-0">
+                            <div class="col-md-10">
+                                <center><button type="submit" 
+                                    class="btn btn-primary"
+                                    style="border-radius: 30px; width: 250px; height: 45px" >
+                                    {{ __('Register') }}
+                                </button></center><br>
+                            </div><hr>
+                            <div class="col-md-10">
+                                <center>
+                                    <a href="{{ route('login') }}">{{ __('Already have an account? Login!') }}</a>
+                                </center>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
 @endsection
