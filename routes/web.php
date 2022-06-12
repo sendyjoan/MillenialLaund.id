@@ -20,6 +20,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/test', function () {
+    return view('admin.home.index');
+});
 
 Route::get('/bahan', function () {
     return view('alatBahan');
