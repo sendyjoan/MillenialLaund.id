@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        <a href="/admin/Transksi"
+        <a href="/transksi"
           class="btn btn-success d-none d-md-inline-block text-white">Kembali</a>
       </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="col-lg-12 col-xlg-9 col-md-7">
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/admin/Transksi">
+          <form class="form-horizontal form-material mx-2" method="POST" action="/transksi">
             @csrf
             <div class="form-group">
               <label class="col-md-12 mb-0">Transksi</label>

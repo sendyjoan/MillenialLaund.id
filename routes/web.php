@@ -20,9 +20,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/test', function () {
-    return view('admin.home.index');
-});
+
 
 Route::get('/bahan', function () {
     return view('alatBahan');
@@ -36,4 +34,52 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// ADMIN
+Route::get('/home', function () {
+    return view('admin.home.index');
+});
 
+Route::get('/cabang', function () {
+    $data = [];
+    return view('admin.cabang.index', compact('data'));
+});
+
+Route::get('/cabang/create', function () {
+    $data = [];
+    return view('admin.cabang.create', compact('data'));
+});
+
+Route::get('/cabang/edit', function () {
+    $data = ['id' => 1, 'cabang' => 'jkjk'];
+    return view('admin.cabang.edit', compact('data'));
+});
+
+Route::get('/product', function () {
+    $data = [];
+    return view('admin.product.index',compact('data'));
+});
+
+Route::get('/product/create', function () {
+    $data = [];
+    return view('admin.product.create',compact('data'));
+});
+
+Route::get('/product/edit', function () {
+    $data = [];
+    return view('admin.product.edit',compact('data'));
+});
+
+Route::get('/reward', function () {
+    $data = [];
+    return view('admin.reward.index',compact('data') );
+});
+
+Route::get('/transaksi', function () {
+    $data = [];
+    return view('admin.transaksi.index', compact('data'));
+});
+
+Route::get('/user', function () {
+    $data = [];
+    return view('admin.user.index', compact('data'));
+});

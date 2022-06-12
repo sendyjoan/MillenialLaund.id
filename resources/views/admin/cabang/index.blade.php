@@ -15,7 +15,7 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        <a href="/admin/cabang/create"
+        <a href="/cabang/create"
           class="btn btn-success d-none d-md-inline-block text-white">Tambah Data</a>
       </div>
     </div>
@@ -48,7 +48,7 @@
                 <tr>
                   <th class="border-top-0">No</th>
                   <th class="border-top-0">Alamat</th>
-                  <th class="border-top-0">Cabang</th>
+                  <th class="border-top-0">Nama Cabang</th>
                   <th class="border-top-0">Action</th>
                 </tr>
               </thead>
@@ -59,11 +59,11 @@
                     <td>{{ $item->alamat }}</td>
                     <td>{{ $item->cabang }}</td>
                     <td>
-                      <form action="/admin/cabang/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
+                      <form action="/cabang/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
                         @csrf
                         @method('DELETE')
 
-                        <a href="/admin/cabang/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
+                        <a href="/cabang/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
                         <button type="submit" class="btn btn-danger btn-sm text-light">Hapus</button>
                       </form>
                     </td>

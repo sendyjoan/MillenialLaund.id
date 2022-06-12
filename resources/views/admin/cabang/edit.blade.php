@@ -29,7 +29,7 @@
     <div class="col-lg-12 col-xlg-9 col-md-7">
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/admin/Cabang/{{ $data->id }}">
+          <form class="form-horizontal form-material mx-2" method="POST" action="/Cabang/{{ $data['id']  }}">
             @csrf
             @method('PUT')
 
@@ -37,7 +37,7 @@
               <label class="col-md-12 mb-0">Cabang</label>
               <div class="col-md-12">
                 <input type="text" name="Cabang" placeholder="Cabang"
-                  class="form-control ps-0 form-control-line @error('Cabang') is-invalid @enderror" value="{{ $data->Cabang }}">
+                  class="form-control ps-0 form-control-line @error('Cabang') is-invalid @enderror" value="{{ $data['cabang'] }}">
 
                 @error('Cabang')
                   <span class="invalid-feedback" role="alert">

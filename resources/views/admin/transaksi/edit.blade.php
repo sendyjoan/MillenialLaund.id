@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        <a href="/admin/Transaksi"
+        <a href="/transaksi"
           class="btn btn-success d-none d-md-inline-block text-white">Kembali</a>
       </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="col-lg-12 col-xlg-9 col-md-7">
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/admin/Transaksi/{{ $data->id }}">
+          <form class="form-horizontal form-material mx-2" method="POST" action="/transaksi/{{ $data['id'] }}">
             @csrf
             @method('PUT')
 
@@ -37,7 +37,7 @@
               <label class="col-md-12 mb-0">Transaksi</label>
               <div class="col-md-12">
                 <input type="text" name="Transaksi" placeholder="Transaksi"
-                  class="form-control ps-0 form-control-line @error('Transaksi') is-invalid @enderror" value="{{ $data->Transaksi }}">
+                  class="form-control ps-0 form-control-line @error('Transaksi') is-invalid @enderror" value="{{ $data['transaksi'] }}">
 
                 @error('Transaksi')
                   <span class="invalid-feedback" role="alert">

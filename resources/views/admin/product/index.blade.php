@@ -15,7 +15,7 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        <a href="/admin/Product/create"
+        <a href="/product/create"
           class="btn btn-success d-none d-md-inline-block text-white">Tambah Data</a>
       </div>
     </div>
@@ -58,11 +58,11 @@
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->Product }}</td>
                     <td>
-                      <form action="/admin/Product/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
+                      <form action="/Product/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
                         @csrf
                         @method('DELETE')
 
-                        <a href="/admin/Product/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
+                        <a href="/Product/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
                         <button type="submit" class="btn btn-danger btn-sm text-light">Hapus</button>
                       </form>
                     </td>

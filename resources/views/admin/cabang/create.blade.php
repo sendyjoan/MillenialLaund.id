@@ -29,7 +29,7 @@
     <div class="col-lg-12 col-xlg-9 col-md-7">
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/admin/Cabang">
+          <form class="form-horizontal form-material mx-2" method="POST" action="/Cabang">
             @csrf
             <div class="form-group">
               <label class="col-md-12 mb-0">Cabang</label>
