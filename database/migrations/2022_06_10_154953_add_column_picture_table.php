@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableJenisKelamin extends Migration
+class AddColumnPictureTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateTableJenisKelamin extends Migration
      */
     public function up()
     {
-        Schema::create('jenisKelamin', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_kelamin');
-            $table->timestamps();
+        Schema::table('perlengkapan',function (Blueprint $table){
+            $table->string('foto');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateTableJenisKelamin extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenisKelamin');
+        Schema::table('perlengkapan',function (Blueprint $table){
+            $table->dropColumn('foto');
+        });
     }
 }
