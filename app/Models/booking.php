@@ -9,10 +9,20 @@ class booking extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'tanggalBooking',
-        'totalTransaksi',
-        'id_mesin',
-        'id_pelanggan',
-        'id_perlengkapan',
+        'user_id',
+        'perlengkapan_id',
+        'mesin_id',
+        'tgl_booking',
+        'total_transaksi',
     ];
+    public function perlengkapan(){
+        return $this->belongsToMany(perlengkapan::class);
+    }
+    public function mesinlaundry(){
+        return $this->belongsTo(mesinlaundry::class);
+    }
+    public function user(){
+        return $this->belongsTo(user::class);
+    }
+
 }
