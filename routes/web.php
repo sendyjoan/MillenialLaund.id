@@ -39,6 +39,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // ADMIN
+Route::middleware(['auth', 'isAdmin'])->group(function(){
+    Route::prefix('admin')->group(function(){
+
 Route::get('/home', function () {
     return view('admin.home.index');
 });
@@ -86,4 +89,6 @@ Route::get('/transaksi', function () {
 Route::get('/user', function () {
     $data = [];
     return view('admin.user.index', compact('data'));
+});
+});
 });
