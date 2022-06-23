@@ -51,7 +51,7 @@ class LoginController extends Controller
             if(auth()->user()->level_id == 1){
                 return redirect()->to('/home');
             } else{
-                return redirect()->to('/home');
+                return redirect()->to('/');
             }
         } else{
             return redirect()->route('login')->with('error','Email Atau Password Salah');
