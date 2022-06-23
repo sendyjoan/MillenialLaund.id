@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\cabang;
 use Illuminate\Http\Request;
 
 class CabangController extends Controller
@@ -14,7 +15,8 @@ class CabangController extends Controller
      */
     public function index()
     {
-        
+        $data = cabang::all();
+        return view('admin.cabang.index', compact('data'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CabangController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cabang.create');
     }
 
     /**
@@ -35,7 +37,17 @@ class CabangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cabang' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        cabang::create([
+            'cabang' => $request->cabang,
+            'alamat' => $request->alamat
+        ]);
+
+        return redirect('/admin/cabang')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -46,7 +58,8 @@ class CabangController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = cabang::where('id', $id)->first();
+        return view('admin.cabang.show', compact('data'));
     }
 
     /**
@@ -57,7 +70,8 @@ class CabangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = cabang::where('id', $id)->first();
+        return view('admin.cabang.edit', compact('data'));
     }
 
     /**
@@ -69,7 +83,17 @@ class CabangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'cabang' => 'required',
+        ]);
+
+        //fungsi eloquent untuk menambah data
+        cabang::where('id', $id)->update([
+            'cabang' => $request->cabang,
+            'alamat' => $request->alamat
+        ]);
+
+        return redirect('/admin/cabang')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -80,6 +104,8 @@ class CabangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        cabang::where('id', $id)->delete();
+        return redirect('/admin/cabang')
+                    ->with('success', 'Data Berhasil dihapus!');
     }
 }

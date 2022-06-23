@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,9 +14,14 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        //
+        $data = User::all();
+        return view('admin.user.index', compact('data'));
     }
 
     /**
@@ -24,7 +31,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $role = role::all();
+        return view('admin.users.create',['role'=>$role]);
     }
 
     /**
@@ -35,7 +43,31 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'username'=>'required',
+            'email'=>'required',
+            'role_id'=>'required',
+            'password'=>'required',
+            'tanggal_lahir'=>'required',
+            'alamat'=>'required',
+            'jenis_kelamin'=>'required',
+            'nomer_hp'=>'required',
+        ]);
+
+        User::create([
+            'username' => $request->username,
+            'email' => $request->email,
+            'role_id' => $request->role_id,
+            'password' => $request->password,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'nomer_hp' => $request->nomer_hp
+        ]);
+        
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('admin.user.index')
+        ->with('success','Pelanggan Berhasil Ditambahakan');
     }
 
     /**
@@ -46,7 +78,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = User::where('id', $id)->first();
+        return view('admin.user.show', compact('data'));
     }
 
     /**
@@ -57,7 +90,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = User::where('id', $id)->first();
+        return view('admin.user.edit', compact('data'));
     }
 
     /**
@@ -69,7 +103,31 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'username'=>'required',
+            'email'=>'required',
+            'role_id'=>'required',
+            'password'=>'required',
+            'tanggal_lahir'=>'required',
+            'alamat'=>'required',
+            'jenis_kelamin'=>'required',
+            'nomer_hp'=>'required',
+        ]);
+
+        User::where('id', $id)->update([
+            'username' => $request->username,
+            'email' => $request->email,
+            'role_id' => $request->role_id,
+            'password' => $request->password,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'nomer_hp' => $request->nomer_hp
+        ]);
+        
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('admin.user.index')
+        ->with('success','Pelanggan Berhasil Ditambahakan');
     }
 
     /**
@@ -80,6 +138,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::where('id', $id)->delete();
+        return redirect('/admin/user')
+                    ->with('success', 'Data Berhasil dihapus!');
     }
 }

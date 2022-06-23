@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class CabangSeeder extends Seeder
 {
@@ -23,6 +23,6 @@ class CabangSeeder extends Seeder
             'cabang' => 'Cabang3'),
         );
     
-            DB::table('cabangs')->insert($cabang);
+        DB::table('cabangs')->insert($cabang);
     }
 }
