@@ -44,12 +44,7 @@
           <!-- ============================================================== -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              @if ('AUTH - USER' == null)
-                <img src="{{ asset('admin/images/users/5.jpg') }}" class="profile-pic me-2"  />
-              @else
-                <img src="{{ asset('storage/'.'AUTH - USER') }}" class="profile-pic me-2"  />
-              @endif
-              {{ 'AUTH - USER' }}
+              {{ Auth::user()->name }}
             </a>
             <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
           </li>

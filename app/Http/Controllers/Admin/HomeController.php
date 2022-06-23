@@ -15,30 +15,19 @@ class HomeController extends Controller
     {
         return view('admin.home.index');
     }
+
     public function update_profile(Request $request){
         // ddd($request->all());
+        // dd('ok');
         $request->validate([
-            'username' => 'required',
             'name' => 'required',
-            'email' => 'required',
-            'role_id' => 'required',
-            'password' => 'required',
-            'tanggal_lahir' => 'required',
             'alamat' => 'required',
-            'jenis_kelamin' => 'required',
-            'nomer_hp' => 'required',
         ]);
 
         User::where('id', auth()->user()->id)
             ->update([
-                'username' => $request->username,
                 'name' => $request->name,
-                'role_id' => $request->role_id,
-                'password' => $request->password,
-                'tanggal_lahir' => $request->tanggal_lahir,
                 'alamat' => $request->alamat,
-                'jenis_kelamin' => $request->jenis_kelamin,
-                'nomer_hp' => $request->nomer_hp,
             ]);
 
         return redirect()->back()
@@ -60,7 +49,7 @@ class HomeController extends Controller
             'password' => Hash::make($request->password)
         ]);
         
-        return redirect('/admin/home')->with('success', 'Password successfully changed at '.Carbon::now());
+        return redirect('/home')->with('success', 'Password successfully changed at '.Carbon::now());
     }
     
 }

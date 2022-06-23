@@ -50,7 +50,7 @@ class MesinController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect('/admin/mesinlaundry')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/mesinlaundry')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -105,7 +105,7 @@ class MesinController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect('/admin/mesinlaundry')->with('success', 'Data berhasil diubah!');
+        return redirect('/mesinlaundry')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -117,7 +117,7 @@ class MesinController extends Controller
     public function destroy($id)
     {
         mesinlaundry::where('id', $id)->delete();
-        return redirect('/admin/cabang')
+        return redirect('/cabang')
                     ->with('success', 'Data Berhasil dihapus!');
     }
 }

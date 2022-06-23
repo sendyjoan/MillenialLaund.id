@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        <a href="/cabang"
+        <a href="/product"
           class="btn btn-success d-none d-md-inline-block text-white">Kembali</a>
       </div>
     </div>
@@ -29,31 +29,16 @@
     <div class="col-lg-12 col-xlg-9 col-md-7">
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/cabang/{{ $data['id']  }}">
+          <form class="form-horizontal form-material mx-2" method="POST" enctype="multipart/form-data" action="/product/{{ $item->id }}">
             @csrf
             @method('PUT')
-
             <div class="form-group">
-              <label class="col-md-12 mb-0">Alamat</label>
+              <label class="col-md-12 mb-0">Nama</label>
               <div class="col-md-12">
-                <input type="text" name="alamat" placeholder="alamat"
-                  class="form-control ps-0 form-control-line @error('alamat') is-invalid @enderror" value="{{ $data['alamat'] }}">
+                <input type="text" name="name" placeholder="name" 
+                  class="form-control ps-0 form-control-line @error('name') is-invalid @enderror" value="{{ $item->nama }}">
 
-                @error('alamat')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                @enderror
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-12 mb-0">cabang</label>
-              <div class="col-md-12">
-                <input type="text" name="cabang" placeholder="cabang"
-                  class="form-control ps-0 form-control-line @error('cabang') is-invalid @enderror" value="{{ $data['cabang'] }}">
-
-                @error('cabang')
+                @error('name')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -61,6 +46,48 @@
               </div>
             </div>
             
+            <div class="form-group">
+              <label class="col-md-12 mb-0">Jumlah</label>
+              <div class="col-md-12">
+                <input type="number" name="jumlah" placeholder="jumlah"
+                  class="form-control ps-0 form-control-line @error('jumlah') is-invalid @enderror" value="{{ $item->jumlah }}">
+
+                @error('jumlah')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-12 mb-0">Harga</label>
+              <div class="col-md-12">
+                <input type="number" name="harga" placeholder="harga"
+                  class="form-control ps-0 form-control-line @error('harga') is-invalid @enderror" value="{{ $item->harga }}">
+
+                @error('harga')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-12 mb-0">Foto</label>
+              <div class="col-md-12">
+                <input type="file" name="foto" placeholder="foto"
+                  class="form-control ps-0 form-control-line @error('foto') is-invalid @enderror" value="{{ $item->foto }}">
+
+                @error('foto')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+            </div>
+
             <div class="form-group">
               <div class="col-sm-12 d-flex">
                 <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">Submit</button>

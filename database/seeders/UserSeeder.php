@@ -16,13 +16,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user= array(
-            array('username' => 'Bintang',
-                'name' => 'Bintang Adiyatma',
-                'email' => 'bintang12@gmail.com',
+            array('username' => 'Elvira',
+                'name' => 'Elvira',
+                'email' => 'elvira12@gmail.com',
                 'role_id' => 1,
                 'tanggal_lahir' => '2001-12-04',
                 'alamat' => 'Trenggalek',
-                'jenis_kelamin' => 'laki-laki',
+                'jenis_kelamin' => 'perempuan',
                 'nomer_hp' => '095432178099',
                 'foto' => 'boy.png',
                 'password' => Hash::make('password'),

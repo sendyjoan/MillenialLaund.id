@@ -139,7 +139,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::where('id', $id)->delete();
-        return redirect('/admin/user')
+        return redirect('/user')
                     ->with('success', 'Data Berhasil dihapus!');
     }
 }

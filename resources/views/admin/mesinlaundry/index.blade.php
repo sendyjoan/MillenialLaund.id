@@ -15,8 +15,8 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        {{-- <a href="/user/create"
-          class="btn btn-success d-none d-md-inline-block text-white">Tambah Data</a> --}}
+        <a href="/mesin/create"
+          class="btn btn-success d-none d-md-inline-block text-white">Tambah Data</a>
       </div>
     </div>
   </div>
@@ -47,30 +47,32 @@
               <thead>
                 <tr>
                   <th class="border-top-0">No</th>
-                  <th class="border-top-0">Username</th>
-                  <th class="border-top-0">Email</th>
-                  <th class="border-top-0">Alamat</th>
-                  <th class="border-top-0">Role</th>
-                  {{-- <th class="border-top-0">Action</th> --}}
+                  <th class="border-top-0">Cabang ID</th>
+                  <th class="border-top-0">Kapasitas</th>
+                  <th class="border-top-0">Kode</th>
+                  <th class="border-top-0">Harga</th>
+                  <th class="border-top-0">Status</th>
+                  <th class="border-top-0">Aksi</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($data as $item)
                   <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->username }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->alamat }}</td>
-                    <td>{{ $item->role->role }}</td>
-                    {{-- <td>
-                      <form action="/user/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->cabang_id }}</td>
+                    <td>{{ $item->Kapasitas }}</td>
+                    <td>{{ $item->Kode }}</td>
+                    <td>{{ $item->harga }}</td>
+                    <td>{{ $item->status }}</td>
+                    <td>
+                      <form action="/mesin/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
                         @csrf
                         @method('DELETE')
 
-                        <a href="/user/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
+                        <a href="/mesin/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
                         <button type="submit" class="btn btn-danger btn-sm text-light">Hapus</button>
                       </form>
-                    </td> --}}
+                    </td>
                   </tr>
                 @endforeach
               </tbody>

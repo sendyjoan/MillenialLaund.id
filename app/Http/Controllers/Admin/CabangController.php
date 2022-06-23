@@ -47,7 +47,7 @@ class CabangController extends Controller
             'alamat' => $request->alamat
         ]);
 
-        return redirect('/admin/cabang')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/cabang')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -93,7 +93,7 @@ class CabangController extends Controller
             'alamat' => $request->alamat
         ]);
 
-        return redirect('/admin/cabang')->with('success', 'Data berhasil diubah!');
+        return redirect('/cabang')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -105,7 +105,7 @@ class CabangController extends Controller
     public function destroy($id)
     {
         cabang::where('id', $id)->delete();
-        return redirect('/admin/cabang')
+        return redirect('/cabang')
                     ->with('success', 'Data Berhasil dihapus!');
     }
 }

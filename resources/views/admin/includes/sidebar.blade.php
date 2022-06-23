@@ -14,10 +14,20 @@
             href="/cabang" aria-expanded="false"><i class="me-3 fa fa-globe"
             aria-hidden="true"></i><span class="hide-menu">Cabang</span></a>
           </li>
+
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="/role" aria-expanded="false"><i class="me-3 fa fa-table"
+            aria-hidden="true"></i><span class="hide-menu">Role</span></a>
+          </li>
   
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
             href="/user" aria-expanded="false"><i class="me-3 fa fa-table"
             aria-hidden="true"></i><span class="hide-menu">User</span></a>
+          </li>
+
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="/mesin" aria-expanded="false"><i class="me-3 fa fa-table"
+            aria-hidden="true"></i><span class="hide-menu">Mesin Laundry</span></a>
           </li>
   
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -26,8 +36,8 @@
           </li>
   
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="/transaksi" aria-expanded="false"><i class="me-3 fa fa-user" aria-hidden="true"></i><span
-              class="hide-menu">Transaksi</span></a>
+            href="/booking" aria-expanded="false"><i class="me-3 fa fa-user" aria-hidden="true"></i><span
+              class="hide-menu">Booking</span></a>
           </li>
   
           

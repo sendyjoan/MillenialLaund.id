@@ -48,7 +48,7 @@ class BookingController extends Controller
             'total_transaksi' => $request->total_transaksi
         ]);
 
-        return redirect('/admin/booking')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/booking')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -101,7 +101,7 @@ class BookingController extends Controller
             'total_transaksi' => $request->total_transaksi
         ]);
 
-        return redirect('/admin/booking')->with('success', 'Data berhasil diubah!');
+        return redirect('/booking')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -113,7 +113,7 @@ class BookingController extends Controller
     public function destroy($id)
     {
         booking::where('id', $id)->delete();
-        return redirect('/admin/booking')
+        return redirect('/booking')
                     ->with('success', 'Data Berhasil dihapus!');
     }
 }
