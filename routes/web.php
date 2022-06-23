@@ -26,6 +26,10 @@ Route::get('/bahan', function () {
     return view('alatBahan');
 });
 
+Route::get('/chartUser', function () {
+    return view('chart');
+});
+
 Route::get('/edit', function () {
     return view('editProfile');
 });
