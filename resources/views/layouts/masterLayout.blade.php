@@ -57,13 +57,10 @@
                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="/index/why_section">Our Services</a>
-                        </li>
-                        <li class="nav-item">
                            <a class="nav-link" href="/bahan">Bahan Laundry</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="#">Contact</a>
+                           <a class="nav-link" href="/about">About Us</a>
                         </li>
                         <li class="nav-item">
                            
