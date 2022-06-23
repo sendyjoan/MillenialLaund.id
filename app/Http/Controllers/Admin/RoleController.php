@@ -40,7 +40,7 @@ class RoleController extends Controller
             'role' => $request->role
         ]);
 
-        return redirect('/admin/role')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/role')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -85,7 +85,7 @@ class RoleController extends Controller
             'role' => $request->role
         ]);
 
-        return redirect('/admin/role')->with('success', 'Data berhasil diubah!');
+        return redirect('/role')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -97,7 +97,7 @@ class RoleController extends Controller
     public function destroy($id)
     {
         role::where('id', $id)->delete();
-        return redirect('/admin/role')
+        return redirect('/role')
                     ->with('success', 'Data Berhasil dihapus!');
     }
 }

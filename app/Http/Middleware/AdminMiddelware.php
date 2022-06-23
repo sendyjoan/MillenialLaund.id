@@ -16,6 +16,10 @@ class AdminMiddelware
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(auth()->user()->role_id == 1){
+            return $next($request);
+        }
+
+        return redirect('/')->with('error','anda tidak dapat mengakses halaman ini');
     }
 }

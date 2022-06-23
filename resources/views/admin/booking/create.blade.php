@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        <a href="/cabang"
+        <a href="/booking"
           class="btn btn-success d-none d-md-inline-block text-white">Kembali</a>
       </div>
     </div>
@@ -29,31 +29,15 @@
     <div class="col-lg-12 col-xlg-9 col-md-7">
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/cabang/{{ $data['id']  }}">
+          <form class="form-horizontal form-material mx-2" method="POST" action="/booking">
             @csrf
-            @method('PUT')
-
             <div class="form-group">
-              <label class="col-md-12 mb-0">Alamat</label>
+              <label class="col-md-12 mb-0">BOOKING</label>
               <div class="col-md-12">
-                <input type="text" name="alamat" placeholder="alamat"
-                  class="form-control ps-0 form-control-line @error('alamat') is-invalid @enderror" value="{{ $data['alamat'] }}">
+                <input type="text" name="booking" placeholder="booking"
+                  class="form-control ps-0 form-control-line @error('booking') is-invalid @enderror" value="{{ old('booking') }}">
 
-                @error('alamat')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                @enderror
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-12 mb-0">cabang</label>
-              <div class="col-md-12">
-                <input type="text" name="cabang" placeholder="cabang"
-                  class="form-control ps-0 form-control-line @error('cabang') is-invalid @enderror" value="{{ $data['cabang'] }}">
-
-                @error('cabang')
+                @error('booking')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>

@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        <a href="/Product"
+        <a href="/booking"
           class="btn btn-success d-none d-md-inline-block text-white">Kembali</a>
       </div>
     </div>
@@ -29,15 +29,17 @@
     <div class="col-lg-12 col-xlg-9 col-md-7">
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/Product">
+          <form class="form-horizontal form-material mx-2" method="POST" action="/booking/{{ $data['id'] }}">
             @csrf
-            <div class="form-group">
-              <label class="col-md-12 mb-0">Product</label>
-              <div class="col-md-12">
-                <input type="text" name="Product" placeholder="Product"
-                  class="form-control ps-0 form-control-line @error('Product') is-invalid @enderror" value="{{ old('Product') }}">
+            @method('PUT')
 
-                @error('Product')
+            <div class="form-group">
+              <label class="col-md-12 mb-0">BOOKING</label>
+              <div class="col-md-12">
+                <input type="text" name="booking" placeholder="booking"
+                  class="form-control ps-0 form-control-line @error('booking') is-invalid @enderror" value="{{ $data['booking'] }}">
+
+                @error('booking')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>

@@ -50,19 +50,25 @@
                   <th class="border-top-0">Nama</th>
                   <th class="border-top-0">Jumlah</th>
                   <th class="border-top-0">Harga</th>
+                  <th class="border-top-0">Aksi</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($data as $item)
                   <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->Product }}</td>
+                    <td>{{ $item->nama }}</td>
+                    <td>{{ $item->jumlah }}</td>
+                    <td>{{ $item->harga }}</td>
                     <td>
-                      <form action="/Product/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
+                      <a href="{{ asset('storage/'.$item->foto) }}" target="_blank">Lihat</a>
+                    </td>
+                    <td>
+                      <form action="/product/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
                         @csrf
                         @method('DELETE')
 
-                        <a href="/Product/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
+                        <a href="/product/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
                         <button type="submit" class="btn btn-danger btn-sm text-light">Hapus</button>
                       </form>
                     </td>

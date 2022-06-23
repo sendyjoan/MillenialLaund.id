@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\BookingController;
+use App\Http\Controllers\Admin\CabangController;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\MesinController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HalamanHome;
@@ -40,57 +47,19 @@ Route::get('/index/ourservice', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // ADMIN
 Route::middleware(['auth', 'isAdmin'])->group(function(){
+        Route::get('/home', [HomeController::class, 'index']);
+        Route::put('/update_profile', [HomeController::class, 'update_profile']);
+        Route::put('/update_password', [HomeController::class, 'update_password']);
 
-        Route::get('/home', function () {
-            return view('admin.home.index');
-        });
-
-        Route::get('/cabang', function () {
-            $data = [];
-            return view('admin.cabang.index', compact('data'));
-        });
-
-        Route::get('/cabang/create', function () {
-            $data = [];
-            return view('admin.cabang.create', compact('data'));
-        });
-
-        Route::get('/cabang/edit', function () {
-            $data = ['id' => 1, 'cabang' => 'jkjk'];
-            return view('admin.cabang.edit', compact('data'));
-        });
-
-        Route::get('/product', function () {
-            $data = [];
-            return view('admin.product.index',compact('data'));
-        });
-
-        Route::get('/product/create', function () {
-            $data = [];
-            return view('admin.product.create',compact('data'));
-        });
-
-        Route::get('/product/edit', function () {
-            $data = [];
-            return view('admin.product.edit',compact('data'));
-        });
-
-        Route::get('/reward', function () {
-            $data = [];
-            return view('admin.reward.index',compact('data') );
-        });
-
-        Route::get('/transaksi', function () {
-            $data = [];
-            return view('admin.transaksi.index', compact('data'));
-        });
-
-        Route::get('/user', function () {
-            $data = [];
-            return view('admin.user.index', compact('data'));
-        });
+        Route::resource('cabang', CabangController::class);
+        Route::resource('product', ProductController::class);
+        Route::resource('mesin', MesinController::class);
+        Route::resource('user', UserController::class);
+        Route::resource('booking', BookingController::class);
+        Route::resource('role', RoleController::class);
+        Route::resource('user', UserController::class);    
 });

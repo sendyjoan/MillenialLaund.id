@@ -15,8 +15,8 @@
     </div>
     <div class="col-md-6 col-4 align-self-center">
       <div class="text-end upgrade-btn">
-        {{-- <a href="/user/create"
-          class="btn btn-success d-none d-md-inline-block text-white">Tambah Data</a> --}}
+        <a href="/role/create"
+          class="btn btn-success d-none d-md-inline-block text-white">Tambah Data</a>
       </div>
     </div>
   </div>
@@ -43,34 +43,28 @@
           <h4 class="card-title">Basic Table</h4>
           <h6 class="card-subtitle">Add class <code>.table</code></h6>
           <div class="table-responsive">
-            <table class="table user-table no-wrap">
+            <table class="table role-table no-wrap">
               <thead>
                 <tr>
                   <th class="border-top-0">No</th>
-                  <th class="border-top-0">Username</th>
-                  <th class="border-top-0">Email</th>
-                  <th class="border-top-0">Alamat</th>
                   <th class="border-top-0">Role</th>
-                  {{-- <th class="border-top-0">Action</th> --}}
+                  <th class="border-top-0">Action</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($data as $item)
                   <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->username }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->alamat }}</td>
-                    <td>{{ $item->role->role }}</td>
-                    {{-- <td>
-                      <form action="/user/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->role }}</td>
+                    <td>
+                      <form action="/role/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
                         @csrf
                         @method('DELETE')
 
-                        <a href="/user/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
+                        <a href="/role/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
                         <button type="submit" class="btn btn-danger btn-sm text-light">Hapus</button>
                       </form>
-                    </td> --}}
+                    </td>
                   </tr>
                 @endforeach
               </tbody>

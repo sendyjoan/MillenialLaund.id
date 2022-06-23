@@ -28,8 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $cabang = cabang::all();
-        return view('admin.product.create',['cabang'=>$cabang]);
+        return view('admin.perlengkapan.create');
     }
 
     /**
@@ -40,31 +39,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // ddd($request->all());
         $request->validate([
-            'Name'=>'required',
+            'name'=>'required',
             'jumlah'=>'required',
             'harga'=>'required',
-         
+            'foto' => 'required'
         ]);
 
         if($request->file('foto')){
-            $image_name=$request->file('Image')->store('images','public');
+            $image_name=$request->file('foto')->store('foto','public');
         }
 
         $product = new perlengkapan();
-        $product->name = $request->get('Name');
+        $product->nama = $request->get('name');
         $product->jumlah = $request->get('jumlah');
         $product->harga = $request->get('harga');
-        $product->image = $image_name;
-        //fungsi eloquent untuk menambahkan data
-        $cabang = new cabang();
-        $cabang->id = $request->get('cabang');
-
-        $product->cabang()->associate($cabang);
+        $product->foto = $image_name;
         $product->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.product.index')
+        return redirect()->to('/product')
         ->with('success','Produk Berhasil Ditambahakan');
     }
 
@@ -77,7 +72,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $item = perlengkapan::where('id', $id)->first();
-        return view('admin.product.index', compact('item'));
+        return view('admin.perlengkapan.index', compact('item'));
     }
 
     /**
@@ -89,8 +84,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $item = perlengkapan::where('id', $id)->first();
-        $category = cabang::all();
-        return view('admin.product.edit', compact('item','cabang'));
+        return view('admin.perlengkapan.edit', compact('item'));
     }
 
     /**
@@ -103,31 +97,31 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'Name'=>'required',
+            'name'=>'required',
             'jumlah'=>'required',
             'harga'=>'required',
-           
+            'foto' => 'required'
         ]);
 
         if($request->image && file_exists(storage_path('app/public/'. $request->image))) {
             Storage::delete('public/' . $request->image);
         }
 
-        $name_image = null;
+        $name_foto = null;
 
         if($request->file('foto')){
             $name_foto = $request->file('foto')->store('foto','public');
         }
 
         perlengkapan::where('id', $id)->update([
-            'name' => $request->Name,
+            'nama' => $request->name,
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,
-            'foto' => $name_image
+            'foto' => $name_foto
         ]);
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->to('/admin/product')
+        return redirect()->to('/product')
         ->with('success','Product Berhasil Ditambahakan');
     }
 
@@ -140,7 +134,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         perlengkapan::where('id', $id)->delete();
-        return redirect()->route('admin.product.index')
+        return redirect()->to('/product')
                     ->with('success', 'Berhasi menghapus');
     }
 }

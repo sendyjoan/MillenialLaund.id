@@ -18,52 +18,32 @@
   </div>
 </div>
 <div class="container-fluid">
+
+  @if(session('success'))
+    <div class="alert alert-success">
+      {{session('success')}}
+    </div>
+  @endif
+  @if(session('danger'))
+    <div class="alert alert-danger">
+      {{session('danger')}}
+    </div>
+  @endif
   <!-- Row -->
   <div class="row">
     <!-- Column -->
-    <div class="col-lg-4 col-xlg-3 col-md-5">
-      <div class="card">
-        <div class="card-body profile-card">
-          <center class="mt-4">
-            @if ('OK' == null)
-              <img src="{{ asset('admin/images/users/5.jpg') }}" class="rounded-circle" width="150" />
-            @else
-              <img src="{{ asset('storage/'.'OK') }}" class="rounded-circle" width="150" />
-            @endif
-
-            <h4 class="card-title mt-2">Hanna Gover</h4>
-            <h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
-            <div class="row justify-content-center">
-              <div class="col-4">
-                <a href="javascript:void(0)" class="link">
-                <i class="icon-people" aria-hidden="true"></i>
-                <span class="font-normal">254</span>
-                </a>
-              </div>
-              <div class="col-4">
-                <a href="javascript:void(0)" class="link">
-                <i class="icon-picture" aria-hidden="true"></i>
-                <span class="font-normal">54</span>
-                </a>
-              </div>
-            </div>
-          </center>
-        </div>
-      </div>
-    </div>
     <!-- Column -->
-    <!-- Column -->
-    <div class="col-lg-8 col-xlg-9 col-md-7">
+    <div class="col-lg-12 col-xlg-9 col-md-7">
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/admin/update_profile" enctype="multipart/form-data">
+          <form class="form-horizontal form-material mx-2" method="POST" action="/update_profile" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
             <div class="form-group">
               <label class="col-md-12 mb-0">Name</label>
               <div class="col-md-12">
-                <input type="text" name="name" value="{{ 'OK' }}" placeholder="Johnathan Doe"
+                <input type="text" name="name" value="{{ Auth::user()->name }}" placeholder="Johnathan Doe"
                   class="form-control ps-0 form-control-line @error('name') is-invalid @enderror">
                   @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -75,7 +55,7 @@
             <div class="form-group">
               <label for="email" class="col-md-12">Email</label>
               <div class="col-md-12">
-                <input type="email" readonly value="{{ 'OK' }}" read placeholder="johnathan@admin.com"
+                <input type="email" readonly value="{{ Auth::user()->email }}"  placeholder="johnathan@admin.com"
                   class="form-control ps-0 form-control-line" name="email"
                   id="email">
               </div>
@@ -83,30 +63,19 @@
             <div class="form-group">
                 <label for="email" class="col-md-12">Role</label>
                 <div class="col-md-12">
-                  <input type="email" readonly value="{{ 'OK' }}" read placeholder="johnathan@admin.com"
+                  <input type="email" readonly value="{{ Auth::user()->role->role }}" placeholder="johnathan@admin.com"
                     class="form-control ps-0 form-control-line" name="email"
                     id="email">
                 </div>
             </div>
-            <div class="form-group">
-              <label class="col-md-12 mb-0">Tanggal Lahir</label>
-              <div class="col-md-12">
-                <input type="number" name="phone_number" value="{{ 'OK' }}" 
-                  class="form-control ps-0 form-control-line @error('phone_number') is-invalid @enderror">
-                  @error('phone_number')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
-              </div>
-            </div>
+            
 
             <div class="form-group">
               <label class="col-md-12 mb-0">Alamat</label>
               <div class="col-md-12">
-                <input type="text" name="address" value="{{ 'OK' }}" 
-                  class="form-control ps-0 form-control-line @error('address') is-invalid @enderror">
-                  @error('address')
+                <input type="text" name="alamat" value="{{ Auth::user()->alamat }}" 
+                  class="form-control ps-0 form-control-line @error('alamat') is-invalid @enderror">
+                  @error('alamat')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
@@ -117,39 +86,18 @@
             <div class="form-group">
               <label class="col-md-12 mb-0">Jenis Kelamin</label>
               <div class="col-md-12">
-                <select name="gender" class="form-control ps-0 form-control-line @error('gender') is-invalid @enderror">
-                  <option value="L" {{ ('OK' == 'L') ? 'selected' : '' }}>{{ 'Laki-laki' }}</option>
-                  <option value="P" {{ ('OK' == 'P') ? 'selected' : '' }}>{{ 'Perempuan' }}</option>
-                </select>
+                <input type="email" readonly value="{{ Auth::user()->jenis_kelamin }}" placeholder="johnathan@admin.com"
+                    class="form-control ps-0 form-control-line" name="email"
+                    id="email">
 
-                @error('gender')
+                @error('jenis_kelamin')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
                 @enderror
               </div>
             </div>
-            <div class="form-group">
-                <label for="email" class="col-md-12">Nomor Hp</label>
-                <div class="col-md-12">
-                  <input type="email" readonly value="{{ 'OK' }}" read placeholder="johnathan@admin.com"
-                    class="form-control ps-0 form-control-line" name="email"
-                    id="email">
-                </div>
-            </div>
-            <div class="form-group">
-              <label class="col-md-12 mb-0">Foto</label>
-              <div class="col-md-12">
-                <input type="file" name="image" placeholder="123 456 7890"
-                  class="form-control ps-0 form-control-line @error('image') is-invalid @enderror">
-                  @error('image')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
-              </div>
-            </div>
-
+          
             <div class="form-group">
               <div class="col-sm-12 d-flex">
                 <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">Update
@@ -162,7 +110,7 @@
 
       <div class="card">
         <div class="card-body">
-          <form class="form-horizontal form-material mx-2" method="POST" action="/admin/update_password" enctype="multipart/form-data">
+          <form class="form-horizontal form-material mx-2" method="POST" action="/update_password" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
