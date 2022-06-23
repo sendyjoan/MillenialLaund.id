@@ -40,18 +40,18 @@ class LoginController extends Controller
     }
     public function login(Request $request)
     {
-        $input = $request->all();
+        // $input = $request->all();
         $this->validate($request,[
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        if(auth()->attempt(['email' => $input['email'], 'password' => $input['password']]))
+        if(auth()->attempt(['email' => $request->email, 'password' => $request->password]))
         {
             if(auth()->user()->level_id == 1){
-                return redirect()->to('/admin/home');
+                return redirect()->to('/home');
             } else{
-                return redirect()->route('home');
+                return redirect()->to('/home');
             }
         } else{
             return redirect()->route('login')->with('error','Email Atau Password Salah');
