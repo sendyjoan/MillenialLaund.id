@@ -58,6 +58,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
         Route::resource('cabang', CabangController::class);
         Route::resource('product', ProductController::class);
         Route::resource('mesin', MesinController::class);
+        Route::put('/mesin/{id}/tersedia', [MesinController::class, 'tersedia']);
+        Route::put('/mesin/{id}/untersedia', [MesinController::class, 'untersedia']);
         Route::resource('user', UserController::class);
         Route::resource('booking', BookingController::class);
         Route::resource('role', RoleController::class);

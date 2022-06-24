@@ -50,7 +50,7 @@ class MesinController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect('/mesinlaundry')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/mesin')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -105,7 +105,25 @@ class MesinController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect('/mesinlaundry')->with('success', 'Data berhasil diubah!');
+        return redirect('/mesin')->with('success', 'Data berhasil diubah!');
+    }
+
+    public function tersedia(Request $request, $id)
+    {
+        mesinlaundry::where('id', $id)->update([
+            'status' => 'tidak tersedia'
+        ]);
+
+        return redirect('/mesin')->with('success', 'Data berhasil diubah!');
+    }
+
+    public function untersedia(Request $request, $id)
+    {
+        mesinlaundry::where('id', $id)->update([
+            'status' => 'tersedia'
+        ]);
+
+        return redirect('/mesin')->with('success', 'Data berhasil diubah!');
     }
 
     /**

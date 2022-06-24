@@ -34,12 +34,26 @@
             @method('PUT')
 
             <div class="form-group">
-              <label class="col-md-12 mb-0">Mesin</label>
+              <label class="col-md-12 mb-0">nama</label>
               <div class="col-md-12">
-                <input type="text" name="mesin" placeholder="mesin"
-                  class="form-control ps-0 form-control-line @error('mesin') is-invalid @enderror" value="{{ $data['mesin'] }}">
+                <input type="text" name="nama" placeholder="nama"
+                  class="form-control ps-0 form-control-line @error('nama') is-invalid @enderror" value="{{ $data['nama'] }}">
 
-                @error('mesin')
+                @error('nama')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-12 mb-0">cabang_id</label>
+              <div class="col-md-12">
+                <input type="text" name="cabang_id" placeholder="cabang_id"
+                  class="form-control ps-0 form-control-line @error('cabang_id') is-invalid @enderror" value="{{ $data['cabang_id'] }}">
+
+                @error('cabang_id')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -47,6 +61,62 @@
               </div>
             </div>
             
+            <div class="form-group">
+              <label class="col-md-12 mb-0">kapasitas</label>
+              <div class="col-md-12">
+                <input type="text" name="kapasitas" placeholder="kapasitas"
+                  class="form-control ps-0 form-control-line @error('kapasitas') is-invalid @enderror" value="{{ $data['kapasitas'] }}">
+
+                @error('kapasitas')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-12 mb-0">kode</label>
+              <div class="col-md-12">
+                <input type="text" name="kode" placeholder="kode"
+                  class="form-control ps-0 form-control-line @error('kode') is-invalid @enderror" value="{{ $data['kode'] }}">
+
+                @error('kode')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-12 mb-0">harga</label>
+              <div class="col-md-12">
+                <input type="text" name="harga" placeholder="harga"
+                  class="form-control ps-0 form-control-line @error('harga') is-invalid @enderror" value="{{ $data['harga'] }}">
+
+                @error('harga')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-12 mb-0">status</label>
+              <div class="col-md-12">
+                <input type="text" name="status" placeholder="status"
+                  class="form-control ps-0 form-control-line @error('status') is-invalid @enderror" value="{{ $data['status'] }}">
+
+                @error('status')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+            </div>
+
             <div class="form-group">
               <div class="col-sm-12 d-flex">
                 <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">Submit</button>

@@ -32,12 +32,12 @@
           <form class="form-horizontal form-material mx-2" method="POST" action="/mesin">
             @csrf
             <div class="form-group">
-              <label class="col-md-12 mb-0">Mesin</label>
+              <label class="col-md-12 mb-0">Nama</label>
               <div class="col-md-12">
-                <input type="text" name="mesin" placeholder="mesin"
-                  class="form-control ps-0 form-control-line @error('mesin') is-invalid @enderror" value="{{ old('mesin') }}">
+                <input type="text" name="nama" placeholder="nama"
+                  class="form-control ps-0 form-control-line @error('nama') is-invalid @enderror" value="{{ old('nama') }}">
 
-                @error('mesin')
+                @error('nama')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -45,13 +45,14 @@
               </div>
             </div>
 
+
             <div class="form-group">
               <label class="col-md-12 mb-0">Cabang ID</label>
               <div class="col-md-12">
-                <input type="text" name="mesin" placeholder="mesin"
-                  class="form-control ps-0 form-control-line @error('mesin') is-invalid @enderror" value="{{ old('mesin') }}">
+                <input type="text" name="cabang_id" placeholder="cabang_id"
+                  class="form-control ps-0 form-control-line @error('cabang_id') is-invalid @enderror" value="{{ old('cabang_id') }}">
 
-                @error('mesin')
+                @error('cabang_id')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -62,10 +63,10 @@
             <div class="form-group">
               <label class="col-md-12 mb-0">Kapasitas</label>
               <div class="col-md-12">
-                <input type="text" name="mesin" placeholder="mesin"
-                  class="form-control ps-0 form-control-line @error('mesin') is-invalid @enderror" value="{{ old('mesin') }}">
+                <input type="text" name="kapasitas" placeholder="kapasitas"
+                  class="form-control ps-0 form-control-line @error('kapasitas') is-invalid @enderror" value="{{ old('kapasitas') }}">
 
-                @error('mesin')
+                @error('kapasitas')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -76,10 +77,10 @@
             <div class="form-group">
               <label class="col-md-12 mb-0">Kode</label>
               <div class="col-md-12">
-                <input type="text" name="mesin" placeholder="mesin"
-                  class="form-control ps-0 form-control-line @error('mesin') is-invalid @enderror" value="{{ old('mesin') }}">
+                <input type="text" name="kode" placeholder="kode"
+                  class="form-control ps-0 form-control-line @error('kode') is-invalid @enderror" value="{{ old('kode') }}">
 
-                @error('mesin')
+                @error('kode')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -90,10 +91,10 @@
             <div class="form-group">
               <label class="col-md-12 mb-0">Harga</label>
               <div class="col-md-12">
-                <input type="text" name="mesin" placeholder="mesin"
-                  class="form-control ps-0 form-control-line @error('mesin') is-invalid @enderror" value="{{ old('mesin') }}">
+                <input type="text" name="harga" placeholder="harga"
+                  class="form-control ps-0 form-control-line @error('harga') is-invalid @enderror" value="{{ old('harga') }}">
 
-                @error('mesin')
+                @error('harga')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -104,10 +105,10 @@
             <div class="form-group">
               <label class="col-md-12 mb-0">Status</label>
               <div class="col-md-12">
-                <input type="text" name="mesin" placeholder="mesin"
-                  class="form-control ps-0 form-control-line @error('mesin') is-invalid @enderror" value="{{ old('mesin') }}">
+                <input type="text" name="status" placeholder="status"
+                  class="form-control ps-0 form-control-line @error('status') is-invalid @enderror" value="{{ old('status') }}">
 
-                @error('mesin')
+                @error('status')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
