@@ -47,6 +47,7 @@
               <thead>
                 <tr>
                   <th class="border-top-0">No</th>
+                  <th class="border-top-0">Nama</th>
                   <th class="border-top-0">Cabang ID</th>
                   <th class="border-top-0">Kapasitas</th>
                   <th class="border-top-0">Kode</th>
@@ -59,19 +60,30 @@
                 @foreach ($data as $item)
                   <tr>
                     <td>{{ $item->id }}</td>
+                    <td>{{ $item->nama }}</td>
                     <td>{{ $item->cabang_id }}</td>
-                    <td>{{ $item->Kapasitas }}</td>
-                    <td>{{ $item->Kode }}</td>
+                    <td>{{ $item->kapasitas }}</td>
+                    <td>{{ $item->kode }}</td>
                     <td>{{ $item->harga }}</td>
                     <td>{{ $item->status }}</td>
                     <td>
-                      <form action="/mesin/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin akan menghapus data?')" method="POSt">
-                        @csrf
-                        @method('DELETE')
+                      @if ($item->status == 'tersedia')
+                        <form action="/mesin/{{ $item->id }}/tersedia" onsubmit="return confirm('Apakah anda yakin akan mengubah data?')" method="POSt">
+                          @csrf
+                          @method('PUT')
 
-                        <a href="/mesin/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a>
-                        <button type="submit" class="btn btn-danger btn-sm text-light">Hapus</button>
-                      </form>
+                          {{-- <a href="/mesin/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a> --}}
+                          <button type="submit" class="btn btn-success btn-sm text-light">{{ $item->status }}</button>
+                        </form>
+                      @else
+                        <form action="/mesin/{{ $item->id }}/untersedia" onsubmit="return confirm('Apakah anda yakin akan mengubah data?')" method="POSt">
+                          @csrf
+                          @method('PUT')
+
+                          {{-- <a href="/mesin/{{ $item->id }}/edit" class="btn btn-info btn-sm text-light">Edit</a> --}}
+                          <button type="submit" class="btn btn-warning btn-sm text-light">{{ $item->status }}</button>
+                        </form>
+                      @endif
                     </td>
                   </tr>
                 @endforeach
