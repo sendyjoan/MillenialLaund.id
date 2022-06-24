@@ -31,8 +31,9 @@
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-      
-      <!-- bootstrap core css -->
+
+
+    <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
       <!-- font awesome style -->
       <link href="css/font-awesome.min.css" rel="stylesheet" />
@@ -40,6 +41,16 @@
       <link href="css/style.css" rel="stylesheet" />
       <!-- responsive style -->
       <link href="css/responsive.css" rel="stylesheet" />
+
+      
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="chart/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="chart/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="chart/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="chart/css/custom.css">
    </head>
    <body>
       <div class="hero_area">
@@ -73,7 +84,7 @@
                            <a class="nav-link" href="/register">Register</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="/chartUser">
+                           <a class="nav-link" href="#">
                               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10px" y="10px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                                  <g>
                                     <g>
@@ -139,8 +150,55 @@
             </div>
          </header>
          <!-- end header section -->
-         @yield('content')
-      <!-- end client section -->
+       
+
+         <div class="shop-detail-box-main">
+        <div class="container">
+            <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-6">
+                    <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active"> <img class="d-block w-100" src="images/mesin1.jpg" alt="First slide"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-6">
+                    <div class="single-product-details">
+                        <h2>Sharp Laundry</h2>
+                        <p class="available-stock"><span> Status: <a href="#">Tersedia </a></span><p>
+						<h4>Deskripsi Mesin:</h4>
+						<p>Nam sagittis a augue eget scelerisque. Nullam lacinia consectetur sagittis. Nam sed neque id eros fermentum dignissim quis at tortor. Nullam ultricies urna quis sem sagittis pharetra. Nam erat turpis, cursus in ipsum at,
+							tempor imperdiet metus. In interdum id nulla tristique accumsan. Ut semper in quam nec pretium. Donec egestas finibus suscipit. Curabitur tincidunt convallis arcu. </p>
+						<ul>
+							<li>
+								<div class="form-group quantity-box">
+									<label class="control-label">Booking Pada Tanggal:</label>
+									<input class="form-control" value="" min="" max="" type="text">
+                                    <label class="control-label">Booking Pada Jam:</label>
+                                    <input class="form-control" value="" min="" max="" type="text">
+								</div>
+							</li>
+						</ul>
+
+						<div class="price-box-bar">
+							<div class="cart-and-bay-btn">
+								<a class="btn hvr-hover" data-fancybox-close="" href="#">Booking</a>
+								
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+			
+			
+
+            
+
+        </div>
+    </div>
+
+
+      
       <!-- footer start -->
       <footer>
          <div class="container-fluid">
@@ -224,5 +282,24 @@
       <script src="js/bootstrap.js"></script>
       <!-- custom js -->
       <script src="js/custom.js"></script>
+
+
+      
+    <!-- ALL JS FILES -->
+    <script src="chart/js/jquery-3.2.1.min.js"></script>
+    <script src="chart/js/popper.min.js"></script>
+    <script src="chart/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="chart/js/jquery.superslides.min.js"></script>
+    <script src="chart/js/bootstrap-select.js"></script>
+    <script src="chart/js/inewsticker.js"></script>
+    <script src="chart/js/bootsnav.js."></script>
+    <script src="chart/js/images-loded.min.js"></script>
+    <script src="chart/js/isotope.min.js"></script>
+    <script src="chart/js/owl.carousel.min.js"></script>
+    <script src="chart/js/baguetteBox.min.js"></script>
+    <script src="chart/js/form-validator.min.js"></script>
+    <script src="chart/js/contact-form-script.js"></script>
+    <script src="chart/js/custom.js"></script>
    </body>
 </html>

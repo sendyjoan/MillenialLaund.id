@@ -71,6 +71,9 @@
                            <a class="nav-link" href="/bahan">Bahan Laundry</a>
                         </li>
                         <li class="nav-item">
+                           <a class="nav-link" href="/mesin">Mesin Laundry</a>
+                        </li>
+                        <li class="nav-item">
                            <a class="nav-link" href="/about">About Us</a>
                         </li>
                         <li class="nav-item">
