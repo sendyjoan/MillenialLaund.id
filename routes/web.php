@@ -45,6 +45,18 @@ Route::get('/index/ourservice', function () {
     return view('index');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/mesin', function () {
+    return view('mesin');
+});
+
+Route::get('/detailMesin', function () {
+    return view('detailMesin');
+});
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
